@@ -181,12 +181,12 @@ public class WrapperRecyclerView extends RecyclerView {
         void onRefresh();
     }
 
-
+    // TODO: unchecked
     public interface OnItemClickListener {
-        void onItemClick(BaseRecyclerAdapter<?, ViewHolder> adapter, View view, int position, int viewType);
+        void onItemClick(BaseRecyclerAdapter<?> adapter, View view, int position, int viewType);
     }
 
     public interface OnItemLongClickListener {
-        boolean onItemLongClick(BaseRecyclerAdapter<?, ViewHolder> adapter, View view, int position, int viewType);
+        boolean onItemLongClick(BaseRecyclerAdapter<?> adapter, View view, int position, int viewType);
     }
 }
