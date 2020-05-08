@@ -33,7 +33,7 @@ public class WrapperRecyclerView extends RecyclerView {
     }
 
     /**
-     * 添加header view
+     * add header view
      */
     public void addHeaderView(View view, Object data, boolean isSelectable) {
         if (mWrapperAdapter != null) {
@@ -48,7 +48,7 @@ public class WrapperRecyclerView extends RecyclerView {
     }
 
     /**
-     * 添加header view
+     * add header view
      */
     public void addHeaderView(View view) {
         if (mWrapperAdapter != null) {
@@ -57,7 +57,7 @@ public class WrapperRecyclerView extends RecyclerView {
     }
 
     /**
-     * 删除header view
+     * delete header view
      */
     public void removeHeaderView(View view) {
         if (mWrapperAdapter != null) {
@@ -66,7 +66,7 @@ public class WrapperRecyclerView extends RecyclerView {
     }
 
     /**
-     * 删除header view
+     * remove header view
      */
     public void removeAllHeaderView() {
         if (mWrapperAdapter != null) {
@@ -81,7 +81,7 @@ public class WrapperRecyclerView extends RecyclerView {
     }
 
     /**
-     * 添加底部view
+     * add footer view
      *
      * @param view
      */
@@ -92,7 +92,7 @@ public class WrapperRecyclerView extends RecyclerView {
     }
 
     /**
-     * 删除底部view
+     * delete footer view
      *
      * @param view
      */
@@ -181,12 +181,12 @@ public class WrapperRecyclerView extends RecyclerView {
         void onRefresh();
     }
 
-    // TODO: unchecked
+
     public interface OnItemClickListener {
-        void onItemClick(BaseRecyclerAdapter<?> adapter, View view, int position, int viewType);
+        void onItemClick(BaseRecyclerAdapter<?, ViewHolder> adapter, View view, int position, int viewType);
     }
 
     public interface OnItemLongClickListener {
-        boolean onItemLongClick(BaseRecyclerAdapter<?> adapter, View view, int position, int viewType);
+        boolean onItemLongClick(BaseRecyclerAdapter<?, ViewHolder> adapter, View view, int position, int viewType);
     }
 }

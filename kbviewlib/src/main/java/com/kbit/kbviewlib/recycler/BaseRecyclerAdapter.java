@@ -15,8 +15,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
-// TODO: unchecked
-public abstract class BaseRecyclerAdapter<T> extends RecyclerView.Adapter {
+public abstract class BaseRecyclerAdapter<T, VH extends RecyclerView.ViewHolder> extends RecyclerView.Adapter<VH> {
 
     private Context mContext;
     private final Object mLock = new Object();
