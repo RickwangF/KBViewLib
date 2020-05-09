@@ -33,7 +33,7 @@ public class WrapperRecyclerView extends RecyclerView {
     }
 
     /**
-     * add header view
+     * 添加header view
      */
     public void addHeaderView(View view, Object data, boolean isSelectable) {
         if (mWrapperAdapter != null) {
@@ -48,7 +48,7 @@ public class WrapperRecyclerView extends RecyclerView {
     }
 
     /**
-     * add header view
+     * 添加header view
      */
     public void addHeaderView(View view) {
         if (mWrapperAdapter != null) {
@@ -57,7 +57,7 @@ public class WrapperRecyclerView extends RecyclerView {
     }
 
     /**
-     * delete header view
+     * 删除header view
      */
     public void removeHeaderView(View view) {
         if (mWrapperAdapter != null) {
@@ -66,7 +66,7 @@ public class WrapperRecyclerView extends RecyclerView {
     }
 
     /**
-     * remove header view
+     * 删除header view
      */
     public void removeAllHeaderView() {
         if (mWrapperAdapter != null) {
@@ -81,7 +81,7 @@ public class WrapperRecyclerView extends RecyclerView {
     }
 
     /**
-     * add footer view
+     * 添加底部view
      *
      * @param view
      */
@@ -92,7 +92,7 @@ public class WrapperRecyclerView extends RecyclerView {
     }
 
     /**
-     * delete footer view
+     * 删除底部view
      *
      * @param view
      */
