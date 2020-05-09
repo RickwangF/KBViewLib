@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="model"
+            type="com.example.kbviewlib.BigImageModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+        <ImageView
+            android:id="@+id/iv_big"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:image_url="@{model.imageUrl}"
+            android:place_holder="@{@drawable/default_8x5}"
+            android:error_image="@{@drawable/default_8x5}"
+            tools:src="@drawable/default_8x5"
+            android:scaleType="centerCrop"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
