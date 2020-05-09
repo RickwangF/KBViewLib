@@ -21,9 +21,9 @@
             app:layout_constraintLeft_toLeftOf="parent"
             android:layout_marginTop="10dp"
             android:layout_marginStart="10dp"
-            android:image_url="@{model.imageUrl}"
-            android:place_holder="@{@drawable/ic_logo}"
-            android:error_image="@{@drawable/ic_logo}"
+            app:image_url="@{model.imageUrl}"
+            app:place_holder="@{@drawable/ic_logo}"
+            app:error_image="@{@drawable/ic_logo}"
             tools:src="@drawable/ic_logo"/>
 
         <TextView

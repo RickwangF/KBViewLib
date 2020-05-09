@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <variable
             name="model"
@@ -14,9 +15,9 @@
             android:id="@+id/iv_big"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:image_url="@{model.imageUrl}"
-            android:place_holder="@{@drawable/default_8x5}"
-            android:error_image="@{@drawable/default_8x5}"
+            app:image_url="@{model.imageUrl}"
+            app:place_holder="@{@drawable/default_8x5}"
+            app:error_image="@{@drawable/default_8x5}"
             tools:src="@drawable/default_8x5"
             android:scaleType="centerCrop"/>
 
