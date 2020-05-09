@@ -42,7 +42,6 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     api 'androidx.recyclerview:recyclerview:1.1.0'
-    implementation 'com.kbit:kbnetworklib:1.0.0'
     api 'com.github.bumptech.glide:glide:4.11.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
     api 'jp.wasabeef:glide-transformations:3.3.0'
