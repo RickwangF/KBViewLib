@@ -6,6 +6,8 @@ public class TestModel {
 
     private String imageUrl;
 
+    private long time;
+
     public TestModel() {
     }
 
@@ -23,5 +25,13 @@ public class TestModel {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public long getTime() {
+        return time;
+    }
+
+    public void setTime(long time) {
+        this.time = time;
     }
 }

@@ -5,10 +5,13 @@ import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.os.Bundle;
+import android.text.format.DateUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 
 import com.example.kbviewlib.databinding.ActivityMainBinding;
 import com.example.kbviewlib.databinding.HeaderTestBinding;
+import com.kbit.kbbaselib.util.DateUtil;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -30,11 +33,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initView() {
+        long timestamp = DateUtil.getNowTimeStamp(true);
+        Log.e("date", "timestamp is " + timestamp);
+
         List<TestModel> modelList = new ArrayList<>();
         for (int i = 0; i < 20; i++) {
             TestModel model = new TestModel();
             model.setTitle("这是一条新闻的标题，这是一条标题" + i);
             model.setImageUrl("http://kmzsccfile.kmzscc.com/Uploads/image/2018/08/20/5b7a96b76aabe.jpg");
+            model.setTime(1588855251);
             modelList.add(model);
         }
 
