@@ -60,6 +60,7 @@ public class ItemVideoPlayer extends StandardGSYVideoPlayer {
         int width = ScreenUtil.getScreenWidth(getContext());
         int heigth = Math.round(width * 9.0f / 16);
         drawable.setSize(width, heigth);
+        drawable.setCornerRadius(4);
         drawable.setColor(Color.argb(1, 153, 153, 153));
         return drawable;
     }
