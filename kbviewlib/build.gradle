@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.novoda.bintray-release'
+apply plugin:'maven'
 
 android {
     compileSdkVersion 29
@@ -63,4 +64,22 @@ publish {
     publishVersion = '1.0.10'          // 依赖名compile 'x:y:z'中的版本号z
     desc = 'base view lib'            // 对该开源组件的说明
     website = 'https://github.com/RickwangF/KBViewLib'  // VCS地址，即填写项目上传的Github地址
+}
+
+uploadArchives { //新增 ，因为Android Studio gradle 支持maven插件，所以可以添加此task
+    configuration = configurations.archives
+    repositories {
+        mavenDeployer {
+            repository(url: 'https://repo.rdc.aliyun.com/repository/75450-release-fbhJkw') {
+                authentication(userName: 'U5nwEH', password: 'Jnk7riSPh8')
+            }
+            pom.project {
+                version '1.0.10' //版本名称
+                artifactId 'kbviewlib'  //和前面网站上填写的一样
+                groupId 'com.kbit'  //和前面网站上填写的一样
+                packaging 'aar' //填写aar
+                description 'update version 1.0.10 add new method' //更新描述
+            }
+        }
+    }
 }
