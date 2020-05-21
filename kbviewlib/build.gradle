@@ -39,7 +39,7 @@ dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.1.0'
     testImplementation 'junit:junit:4.12'
-    implementation 'com.kbit:kbbaselib:1.0.6'
+    implementation 'com.kbit:kbbaselib:1.0.8'
     api 'androidx.constraintlayout:constraintlayout:1.1.3'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
@@ -61,7 +61,7 @@ publish {
     repoName = 'KBViewLib'          // Binary上的刚才新建的仓库名（Repository）
     groupId = 'com.kbit'        // 依赖名compile 'x:y:z'中的包名x
     artifactId = 'kbviewlib'        // 依赖名compile 'x:y:z'中的项目名y
-    publishVersion = '1.0.13'          // 依赖名compile 'x:y:z'中的版本号z
+    publishVersion = '1.0.14'          // 依赖名compile 'x:y:z'中的版本号z
     desc = 'base view lib'            // 对该开源组件的说明
     website = 'https://github.com/RickwangF/KBViewLib'  // VCS地址，即填写项目上传的Github地址
 }
@@ -74,11 +74,11 @@ uploadArchives { //新增 ，因为Android Studio gradle 支持maven插件，所
                 authentication(userName: 'U5nwEH', password: 'Jnk7riSPh8')
             }
             pom.project {
-                version '1.0.13' //版本名称
+                version '1.0.14' //版本名称
                 artifactId 'kbviewlib'  //和前面网站上填写的一样
                 groupId 'com.kbit'  //和前面网站上填写的一样
                 packaging 'aar' //填写aar
-                description 'update version 1.0.13 add new method' //更新描述
+                description 'update version 1.0.14 add new method' //更新描述
             }
         }
     }
