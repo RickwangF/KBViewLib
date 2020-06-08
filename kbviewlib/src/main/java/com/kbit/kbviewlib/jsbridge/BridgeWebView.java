@@ -7,9 +7,6 @@ import android.os.SystemClock;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.webkit.WebView;
-
-import org.xml.sax.helpers.DefaultHandler;
-
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -23,7 +20,7 @@ public class BridgeWebView extends WebView implements JKEventHandler {
     public static final String toLoadJs = "WebViewJavascriptBridge.js";
     Map<String, CallBackFunction> responseCallbacks = new HashMap<String, CallBackFunction>();
     Map<String, BridgeHandler> messageHandlers = new HashMap<String, BridgeHandler>();
-    BridgeHandler defaultHandler = (BridgeHandler) new DefaultHandler();
+    BridgeHandler defaultHandler = new DefaultHandler();
 
     private List<Message> startupMessage = new ArrayList<Message>();
 
