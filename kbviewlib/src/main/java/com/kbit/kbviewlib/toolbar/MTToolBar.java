@@ -1,4 +1,4 @@
-package toolbar;
+package com.kbit.kbviewlib.toolbar;
 
 import android.content.Context;
 import android.util.AttributeSet;
