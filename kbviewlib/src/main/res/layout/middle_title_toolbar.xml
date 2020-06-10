@@ -12,7 +12,7 @@
         android:ellipsize="end"
         android:gravity="center"
         android:maxLines="1"
-        android:textSize="17dp"
+        android:textSize="17sp"
         android:textAppearance="?attr/titleTextAppearance"
         tools:text="标题"/>
 </merge>
