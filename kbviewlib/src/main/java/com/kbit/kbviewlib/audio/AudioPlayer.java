@@ -25,6 +25,8 @@ public class AudioPlayer extends StandardGSYVideoPlayer {
 
     ImageView mCoverImage;
 
+    ImageView mBackground;
+
     String mCoverOriginUrl;
 
     Drawable mDefaultRes;
@@ -45,6 +47,7 @@ public class AudioPlayer extends StandardGSYVideoPlayer {
     protected void init(Context context) {
         super.init(context);
         mCoverImage = findViewById(R.id.thumbImage);
+        mBackground = findViewById(R.id.iv_background);
         if (mThumbImageViewLayout != null &&
                 (mCurrentState == -1 || mCurrentState == CURRENT_STATE_NORMAL || mCurrentState == CURRENT_STATE_ERROR)) {
             mThumbImageViewLayout.setVisibility(VISIBLE);
@@ -53,7 +56,7 @@ public class AudioPlayer extends StandardGSYVideoPlayer {
 
     @Override
     public int getLayoutId() {
-        return R.layout.item_video_player;
+        return R.layout.audio_player;
     }
 
     private Drawable initCoverDrawable() {
@@ -67,13 +70,22 @@ public class AudioPlayer extends StandardGSYVideoPlayer {
     }
 
     public void loadCoverImage(String url) {
-        if(mCoverImage!=null) {
+//        if(mCoverImage!=null) {
+//            if(!TextUtils.isEmpty(url)) {
+//                mCoverOriginUrl = url;
+//                mDefaultRes = initCoverDrawable();
+//                Glide.with(mCoverImage).load(url).placeholder(mDefaultRes).error(mDefaultRes).into(mCoverImage);
+//            }else{
+//                mCoverImage.setImageDrawable(mDefaultRes);
+//            }
+//        }
+        if (mBackground != null) {
             if(!TextUtils.isEmpty(url)) {
                 mCoverOriginUrl = url;
                 mDefaultRes = initCoverDrawable();
-                Glide.with(mCoverImage).load(url).placeholder(mDefaultRes).error(mDefaultRes).into(mCoverImage);
+                Glide.with(mBackground).load(url).placeholder(mDefaultRes).error(mDefaultRes).into(mBackground);
             }else{
-                mCoverImage.setImageDrawable(mDefaultRes);
+                mBackground.setImageDrawable(mDefaultRes);
             }
         }
     }
@@ -138,10 +150,10 @@ public class AudioPlayer extends StandardGSYVideoPlayer {
         Debuger.printfLog("changeUiToPreparingShow");
 
         setViewShowState(mTopContainer, VISIBLE);
-        setViewShowState(mBottomContainer, VISIBLE);
+        //setViewShowState(mBottomContainer, VISIBLE);
         setViewShowState(mStartButton, INVISIBLE);
         setViewShowState(mLoadingProgressBar, VISIBLE);
-        //setViewShowState(mThumbImageViewLayout, INVISIBLE);
+        setViewShowState(mThumbImageViewLayout, INVISIBLE);
         setViewShowState(mBottomProgressBar, INVISIBLE);
         setViewShowState(mLockScreen, GONE);
 
@@ -158,10 +170,10 @@ public class AudioPlayer extends StandardGSYVideoPlayer {
         Debuger.printfLog("changeUiToPlayingShow");
 
         setViewShowState(mTopContainer, VISIBLE);
-        setViewShowState(mBottomContainer, VISIBLE);
+        //setViewShowState(mBottomContainer, VISIBLE);
         setViewShowState(mStartButton, VISIBLE);
         setViewShowState(mLoadingProgressBar, INVISIBLE);
-        //setViewShowState(mThumbImageViewLayout, INVISIBLE);
+        setViewShowState(mThumbImageViewLayout, INVISIBLE);
         setViewShowState(mBottomProgressBar, INVISIBLE);
         setViewShowState(mLockScreen, (mIfCurrentIsFullscreen && mNeedLockFull) ? VISIBLE : GONE);
 
@@ -176,10 +188,10 @@ public class AudioPlayer extends StandardGSYVideoPlayer {
         Debuger.printfLog("changeUiToPauseShow");
 
         setViewShowState(mTopContainer, VISIBLE);
-        setViewShowState(mBottomContainer, VISIBLE);
+        //setViewShowState(mBottomContainer, VISIBLE);
         setViewShowState(mStartButton, VISIBLE);
         setViewShowState(mLoadingProgressBar, INVISIBLE);
-        //setViewShowState(mThumbImageViewLayout, INVISIBLE);
+        setViewShowState(mThumbImageViewLayout, INVISIBLE);
         setViewShowState(mBottomProgressBar, INVISIBLE);
         setViewShowState(mLockScreen, (mIfCurrentIsFullscreen && mNeedLockFull) ? VISIBLE : GONE);
 
@@ -195,10 +207,10 @@ public class AudioPlayer extends StandardGSYVideoPlayer {
         Debuger.printfLog("changeUiToPlayingBufferingShow");
 
         setViewShowState(mTopContainer, VISIBLE);
-        setViewShowState(mBottomContainer, VISIBLE);
+        //setViewShowState(mBottomContainer, VISIBLE);
         setViewShowState(mStartButton, INVISIBLE);
         setViewShowState(mLoadingProgressBar, VISIBLE);
-        //setViewShowState(mThumbImageViewLayout, INVISIBLE);
+        setViewShowState(mThumbImageViewLayout, INVISIBLE);
         setViewShowState(mBottomProgressBar, INVISIBLE);
         setViewShowState(mLockScreen, GONE);
 
@@ -215,10 +227,10 @@ public class AudioPlayer extends StandardGSYVideoPlayer {
         Debuger.printfLog("changeUiToCompleteShow");
 
         setViewShowState(mTopContainer, VISIBLE);
-        setViewShowState(mBottomContainer, VISIBLE);
+        //setViewShowState(mBottomContainer, VISIBLE);
         setViewShowState(mStartButton, VISIBLE);
         setViewShowState(mLoadingProgressBar, INVISIBLE);
-        //setViewShowState(mThumbImageViewLayout, VISIBLE);
+        setViewShowState(mThumbImageViewLayout, VISIBLE);
         setViewShowState(mBottomProgressBar, INVISIBLE);
         setViewShowState(mLockScreen, (mIfCurrentIsFullscreen && mNeedLockFull) ? VISIBLE : GONE);
 
@@ -236,7 +248,7 @@ public class AudioPlayer extends StandardGSYVideoPlayer {
         setViewShowState(mBottomContainer, GONE);
         setViewShowState(mStartButton, VISIBLE);
         setViewShowState(mLoadingProgressBar, INVISIBLE);
-        //setViewShowState(mThumbImageViewLayout, INVISIBLE);
+        setViewShowState(mThumbImageViewLayout, INVISIBLE);
         setViewShowState(mBottomProgressBar, INVISIBLE);
         setViewShowState(mLockScreen, (mIfCurrentIsFullscreen && mNeedLockFull) ? VISIBLE : GONE);
 
