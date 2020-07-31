@@ -88,6 +88,19 @@ public class SmallVideoPlayer extends StandardGSYVideoPlayer {
     }
 
     @Override
+    protected void updateStartImage() {
+        super.updateStartImage();
+        if (mStartButton instanceof ImageView) {
+            ImageView imageView = (ImageView) mStartButton;
+            if (mCurrentState == CURRENT_STATE_PLAYING) {
+                imageView.setImageResource(R.drawable.video_pause_selector);
+            } else {
+                imageView.setImageResource(R.drawable.video_play_selector);
+            }
+        }
+    }
+
+    @Override
     protected void touchDoubleUp() {
         //super.touchDoubleUp();
         //不需要双击暂停
