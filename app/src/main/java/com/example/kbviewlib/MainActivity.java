@@ -33,9 +33,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        TestModel model = new TestModel();
-        model.setImageUrl("https://dingyue.ws.126.net/2020/0623/04b53c08j00qccvia000lc000hs009nm.jpg");
-        mBind.setModel(model);
+//        TestModel model = new TestModel();
+//        model.setImageUrl("https://dingyue.ws.126.net/2020/0623/04b53c08j00qccvia000lc000hs009nm.jpg");
+        //mBind.setModel(model);
 //        long timestamp = DateUtil.getNowTimeStamp(true);
 //        Log.e("date", "timestamp is " + timestamp);
 //
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 //            TestModel model = new TestModel();
 //            model.setTitle("这是一条新闻的标题，这是一条标题" + i);
 //            model.setImageUrl("http://kmzsccfile.kmzscc.com/Uploads/image/2018/08/20/5b7a96b76aabe.jpg");
-//            model.setTime(1588855251);
+//            model.setTime(1599037300);
 //            modelList.add(model);
 //        }
 //
@@ -53,6 +53,9 @@ public class MainActivity extends AppCompatActivity {
 //        mBind.rvMain.setLayoutManager(layoutManager);
 //        mBind.rvMain.setAdapter(adapter);
 //        mBind.rvMain.setHasFixedSize(true);
+        TestModel testModel = new TestModel();
+        testModel.setTime(1599105198);
+        mBind.setModel(testModel);
     }
 
     private void initHeadView() {

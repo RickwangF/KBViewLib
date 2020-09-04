@@ -22,7 +22,10 @@ public class TextViewBindingAdapter {
     @BindingAdapter(value = { "app:friendlyFormat" })
     public static void friendlyFormat(TextView textView, long timestamp) {
         Date date = DateUtil.getDateFromTimeStamp(timestamp, true);
-        String dateString = DateUtil.getRelativeTimeStringFromNow(date);
+        String dateString = (String) DateUtils.getRelativeTimeSpanString(timestamp * 1000,
+                System.currentTimeMillis(),
+                DateUtils.SECOND_IN_MILLIS,
+                DateUtils.FORMAT_SHOW_DATE);//DateUtil.getRelativeTimeStringFromNow(date);
         textView.setText(dateString);
     }
 

@@ -23,8 +23,19 @@
             app:layout_constraintRight_toRightOf="parent"
             app:image_res="@{@drawable/ic_logo}"
             app:error_image="@{@drawable/default_8x5}"
-            app:is_round="@{true}">
+            app:is_round="@{true}"
+            android:visibility="gone">
         </ImageView>
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:friendlyFormat="@{model.time}"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
